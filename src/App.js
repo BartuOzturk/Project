@@ -8,11 +8,13 @@ function App() {
     const [movieReviewList, setMovieList] = useState([])
     const [newReview, setNewReview] = useState("")
 
-    useEffect(() =>{
-        axios.get("http://localhost:3001/api/get").then((response) =>{
+
+    useEffect(() => {
+        axios.get("http://backend:3001/api/get").then((response) => {
             setMovieList(response.data);
-        })
-    },[] )
+        });
+    }, []);
+
 
 
     const submitReview = () => {
